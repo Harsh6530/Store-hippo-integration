@@ -32,7 +32,7 @@ const orderSchema = new mongoose.Schema({
 // Create a model from the schema
 const Order = mongoose.model('Order', orderSchema);
 
-app.post('/webhook/customer-creation', async (req, res) => {
+app.post('/webhook/order-creation', async (req, res) => {
     console.log('Received a new Customer Creation webhook event.');
 
     try {
