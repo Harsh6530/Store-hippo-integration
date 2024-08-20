@@ -36,13 +36,13 @@ app.post('/webhook/order-creation', async (req, res) => {
     console.log('Received a new Customer Creation webhook event.');
 
     try {
-        console.log('Inserting customer data into the "orders" collection...');
+       
         
         // Save the entire request body under the "data" field
         const newOrder = new Order({ data: req.body });
         const result = await newOrder.save();
 
-        console.log(`New customer added with the following id: ${result._id}`);
+        
 
         res.status(200).send('Customer data stored successfully');
     } catch (error) {
